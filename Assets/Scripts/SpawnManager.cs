@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
     public float startDelay = 2;
     public float repeatRate = 2;
     private PlayerController playerController;
-  public float leftBound=-15.0f;
+  
     void Start()
     {
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -29,10 +29,7 @@ public class SpawnManager : MonoBehaviour
 
             Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
         }
-        if(transform.position.x<leftBound && gameObject.CompareTag("Obstacle")){
-           
-            Destroy(gameObject);
-        }
+       
 
     }
 }
