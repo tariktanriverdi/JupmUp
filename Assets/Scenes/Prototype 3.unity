@@ -152,9 +152,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8430937dd9edbb94a968c8b87b24b018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 5100904389778518912, guid: 75f1aaec9844edc468dc3a84ac9efbc6, type: 3}
+  obstaclePrefabs:
+  - {fileID: 5100904389778518912, guid: 75f1aaec9844edc468dc3a84ac9efbc6, type: 3}
+  - {fileID: 3967096195403130108, guid: e02079f5c64fb074baf5cc62b6bd0b65, type: 3}
+  - {fileID: 6757926624557166057, guid: a7a71b323a970544b90c6122c4c77953, type: 3}
+  - {fileID: 362313190837662569, guid: ec7e2f342be62b541b52c8fb9859a05c, type: 3}
+  obstacleInstaces: []
   startDelay: 2
-  repeatRate: 3
+  repeatRate: 2
 --- !u!4 &11213579
 Transform:
   m_ObjectHideFlags: 0
@@ -289,11 +294,18 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: 113ee460fadc340e4957a7404a9fbb27, type: 3}
   crashSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
   cameraSource: {fileID: 534669906}
-  jumpForce: 700
+  jumpForce: 500
   gravityModifier: 1.5
   isOnGround: 1
   soundVolume: 0.5
   isGameOver: 0
+  doubleJump: 0
+  spawnManager: {fileID: 11213578}
+  backGround: {fileID: 835818922}
+  score: 0
+  scroreMultipl: 1
+  dashTime: 5
+  dashSpeed: 10
 --- !u!65 &250069033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -321,7 +333,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 90
+  m_Constraints: 88
   m_CollisionDetection: 0
 --- !u!4 &250069036 stripped
 Transform:
@@ -682,7 +694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -7.4
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
       propertyPath: m_LocalPosition.y
@@ -819,7 +831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e2871d4c0d75d4cb1232ad055d98b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 20
   leftBound: -15
 --- !u!114 &835818923
 MonoBehaviour:
